@@ -9,23 +9,22 @@ st.header("Welcome to C137 Test! It's adventure time!")
 
 import getpass
 import os
-from dotenv import main
+# from dotenv import main
 from pathlib import Path
 
-dotenv_path = Path('.env')
-# dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-main.load_dotenv(dotenv_path=dotenv_path)
+# dotenv_path = Path('.env')
+# # dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+# main.load_dotenv(dotenv_path=dotenv_path)
 
 # main.load_dotenv()
 
-try: 
-    os.environ["MISTRAL_API_KEY"]=os.getenv("MISTRAL_API_KEY") 
-    api_key = os.getenv("MISTRAL_API_KEY") 
 
-except:
-    api_key = st.secrets["MISTRAL_API_KEY"]
-# os.environ["MISTRAL_API_KEY"]=st.secrets["MISTRAL_API_KEY"]
-# api_key = st.secrets["MISTRAL_API_KEY"]
+# os.environ["MISTRAL_API_KEY"]=os.getenv("MISTRAL_API_KEY") 
+# api_key = os.getenv("MISTRAL_API_KEY") 
+
+
+os.environ["MISTRAL_API_KEY"]=st.secrets["MISTRAL_API_KEY"]
+api_key = st.secrets["MISTRAL_API_KEY"]
 
 from langchain.chat_models import init_chat_model
 from langchain_mistralai import MistralAIEmbeddings
