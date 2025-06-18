@@ -164,4 +164,4 @@ cython_debug/
 #.idea/
 
 #my data
-./data/ian_chat_history.txt
+data/ian_chat_history.txt
